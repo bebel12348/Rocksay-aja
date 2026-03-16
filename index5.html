@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mulai</title>
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:sans-serif;
+background:black;
+color:white;
+overflow:hidden;
+}
+
+button{
+padding:15px 30px;
+font-size:20px;
+cursor:pointer;
+}
+
+#scare{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+}
+
+#scare img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+</style>
+</head>
+<body>
+
+<button onclick="startJumpscare()">Mulai</button>
+
+<div id="scare">
+<img src="images.jpg" alt="Jumpscare!">
+<audio id="sound">
+<source src="untitled.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+function startJumpscare(){
+  setTimeout(function(){
+    document.getElementById("scare").style.display="block";
+    var s = document.getElementById("sound");
+    s.play();
+    
+  /* setelah suara selesai pindah halaman */ s.onended = function(){ window.location.href = "index.html"; }; },4000); } </script>
+</body>
+</html>
