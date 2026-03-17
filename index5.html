@@ -47,30 +47,376 @@ video {
 
 <audio id="music" autoplay></audio>
 
-<div class="music-control">
-  <button onclick="prevSong()">⏮previous music</button>
-  <button onclick="nextSong()">⏭next music</button>
+<div class="music-box">
+  <div id="songName">Lagu 1</div>
+  <div id="lyrics">Ini lirik lagu pertama</div>
+
+  <button onclick="prevSong()">⏮ Prev</button>
+  <button onclick="togglePlay()">▶ / ⏸</button>
+  <button onclick="nextSong()">⏭ Next</button>
 </div>
 
 <script>
 let songs = [
-  "Akeboshi - Wind (Lyrics).mp3",
-  "公式槇原敬之もう恋なんてしない(MV)5thシングル (1992年) Noriyuki MakiharaMo Koinante Shinai.mp3"
+  {
+    name:"wind by akeboshi",
+    src:"Akeboshi - Wind (Lyrics).mp3",
+    lyrics:"[Verse 1]
+Cultivate your hunger before you idealize
+Motivate your anger to make them all realize
+Climbing the mountain, never coming down
+Break into the contents, never falling down
+
+[Verse 2]
+My knee is still shaking like I was twelve
+Sneaking out the classroom by the back door
+A man railed at me twice, though, but I didn't care
+Waiting is wasting for people like me
+
+[Chorus]
+Don't try to live so wise
+Don't cry 'cause it's alright
+Don't try with fakes or fears
+'Cause you will hate yourself in the end
+Don't try to live so wise
+Don't cry 'cause it's alright
+Don't try with fakes or fears
+'Cause you will hate yourself in the end
+
+[Post-Chorus]
+You say "Dreams, are dreams"
+I ain't gonna play the fool, anymore
+You say "'Cause I've still got my soul!"
+
+You might also like
+Darling, I
+Tyler, The Creator
+Judge Judy
+Tyler, The Creator
+The Tortured Poets Department
+Taylor Swift
+
+[Verse 3]
+Take your time, baby, your blood needs slowing down
+Breach yourself to reach yourself before you gloom
+Reflection of fear makes shadows of nothing
+Shadows of nothing (Shadow of nothing)
+
+[Bridge]
+You still are blind if you see a winding road
+'Cause there's always a straight way to the point you seek
+
+[Chorus]
+Don't try to live so wise
+Don't cry 'cause it's alright
+Don't try with fakes or fears
+'Cause you will hate yourself in the end
+Don't try to live so wise
+Don't cry 'cause it's alright
+Don't try with fakes or fears
+'Cause you will hate yourself in the end
+Don't try to live so wise
+Don't cry 'cause it's alright
+Don't try with fakes or fears
+'Cause you will hate yourself in the end
+
+[Outro]
+'Cause you will hate yourself in the end
+'Cause you will hate yourself in the end
+'Cause you will hate yourself in the end
+'Cause you will hate yourself in the end"
+  },
+  {
+    name:"so asu by naykilla",
+    src:"So Asu - NAYKILLA ( LIRIK ).mp3",
+    lyrics:"[Intro]
+(Oh, what, Jemsii?)
+
+[Verse 1]
+Mukamu cemberut saat lihat aku
+Bersama yang baru, pasti kamu cemburu
+Gak usah diam-diam langsung aja bilang
+Kamu mau balikan, kar'na aku cantikan
+
+[Pre-Chorus]
+Hey, masih kukenang mata kunang-kunang
+Hey, pelukan yang hangat menjadi bayangan
+So asu
+
+[Chorus]
+Waktu ditinggalin, ku nggak mau kalah
+Walau ku ngeselin, aku nggak pernah salah
+Pas aku nungguin, kau bilang kau lelah
+Pas aku pastiin, kamu malah meludah
+
+[Post-Chorus]
+Oh, woah, semua didebatin, kok nggak mau ngalah? (So asu)
+Oh, woah, udah dibaikin, malah marah-marah (So asu)
+
+You might also like
+Stuck
+LANY
+EYES CLOSED
+JISOO & ZAYN
+Ngga Dulu
+Akbar Chalay
+
+[Verse 2]
+Kok nggak punya malu?
+Semua kubeliin
+Dari atas sampe bawah
+
+[Pre-Chorus]
+Hey, masih kukenang mata kunang-kunang
+Hey, pelukan yang hangat menjadi bayangan
+So asu
+
+[Chorus]
+Waktu ditinggalin, ku nggak mau kalah
+Walau ku ngeselin, aku nggak pernah salah
+Pas aku nungguin, kau bilang kau lelah
+Pas aku pastiin, kamu malah meludah
+
+[Post-Chorus]
+Oh, woah, semua didebatin, kok nggak mau ngalah? (So asu)
+Oh, woah, udah dibaikin, malah marah-marah (So asu)
+
+[Outro]
+So asu
+So a—, so a—, so a—
+So asu"
+  },
+  {
+    name:"malu malu by dia & indahkus",
+    src:"dia & INDAHKUS - MALU MALU (Official Music Video Lyric).mp3",
+    lyrics:"Pandangku hanya padamu
+Hanya kamu
+Seakan dunia memberhentikan waktu
+1000 kata membanjiri pikiranku
+Tapi ku malu-malu
+Mungkin di lain waktu?
+
+Isi pikiranku kamu
+Jadi terlalu banyak buang waktu
+Dari atas sampai bawah, anggun
+Baby know that I just wanna be with you, uh
+Siang-siang kepikiran
+Malam-malam sendirian
+Scrolling Tik-Tok feednya isi cinta cintaan
+Know that one day i will
+Ask u to be mine
+
+Boy, jangan malu malu
+Boy, kamu itu lucu
+Boy, don't waste my time so please say it now
+Kamu mau apa
+Semua aku bisa
+Just look at my eyes, sure you wouldnt think twice
+
+Pandangku hanya padamu
+Hanya kamu
+Seakan dunia memberhentikan waktu
+1000 kata membanjiri pikiranku
+Tapi ku malu-malu
+Mungkin di lain waktu?
+
+You might also like
+SENCY
+dia (IDN)
+Hearts2Hearts - RUDE! (Romanized)
+Genius Romanizations
+EEEE A
+dia (IDN)
+
+I see you lookin', got that little cute thing
+Cuz in my heart, (i'll)let the games begin
+Lihat mata kamu, I'm feelin' the heat
+You're a nerd, but I cant defeat
+
+Cuz I chose you first, baby
+Gonna love you back, baby
+Asalkan bisa jaga hati
+Ni xian shuo ai wo, wo jiu kending yongyuan ai ni
+
+I ain't trynna lose you baby (wo ai ni)
+Walau aku malu-malu lately (ooh)
+Soal percintaan ku paling sabi
+(tapi)
+Aku harap kamu cukup paham (paham sayang)
+Ku introvert level 99 (Iya sayang)
+Tapi akan ku beranikan (Kapan woi)
+Tapi jangan pakai tanya kapan
+
+Pandangku hanya padamu
+Hanya kamu
+Seakan dunia memberhentikan waktu
+1000 kata membanjiri pikiranku
+Tapi ku malu-malu
+Mungkin di lain waktu?"
+  },
+  {
+    name:"公式槇原敬之もう恋なんてしない",
+    src:"公式槇原敬之もう恋なんてしない(MV)5thシングル (1992年) Noriyuki MakiharaMo Koinante Shinai.mp3",
+    lyrics:"Kimi ga inai to nan ni mo
+Dekinai wake ja nai to
+Yakan o hi ni kaketa kedo
+Koucha no arika ga wakaranai
+Hora choushoku mo tsukureta mon ne
+Dakedo amari oishikunai
+Kimi ga tsukutta no nara monku mo
+Omoikiri ieta noni
+
+Issho ni iru toki wa
+Kyuukutsu ni omoeru kedo
+Yatto jiyuu o te ni ireta
+Boku wa motto sabishiku natta
+
+Sayonara to itta kimi no
+Kimochi wa wakaranai kedo
+Itsumo yori nagame ga ii
+Hidari ni sukoshi tomadotteru yo
+Moshi kimi ni hitotsu dake
+Tsuyogari o ieru no nara
+Mou koi nante shinai nante
+Iwanai yo zettai
+
+Nihon naranda haburashi mo
+Ippon sutete shimaou
+Kimi no shumi de katta fuku mo
+Mottainai kedo sutete shimaou
+"otokorashiku isagiyoku" to
+Gomibako kakaeru boku wa
+Hoka no dare kara mite mo ichiban
+Senchimentaru darou
+
+Konna ni ippai no
+Kimi no nukegara atsumete
+Muda na mono ni kakomarete
+Kurasu no mo shiawase to shitta
+
+Kimi ate no yuubin ga
+Posuto ni todoiteru uchi wa
+Katasumi de mayotte iru
+Senaka o omottе shinpai da kedo
+Futari de dasenakatta
+Kotaе wa kondo aeraeru
+Kimi no shiranai dareka to
+Mitsukete miseru kara
+
+Hontou ni hontou ni
+Kimi ga daisuki datta kara
+Mou koi nante shinai nante
+Iwanai yo zettai"
+  },
+  {
+    name:"sency by dia & tenxi",
+    src:"Sency - Dia, Tenxi (Lyrics).mp3",
+    lyrics:"Sudah lama ku menunggu
+Ku berhadapan denganmu
+Kau menghentikan waktuku
+Tatapanmu membuat aku
+
+Jatuh cinta padamu
+Kau membuatku tak ragu-ragu
+Ku kan habiskan waktuku
+Hanya untukmu (dangdut'e endi cok?!)
+
+Gausah centang biru
+Tapi kamu dah verified
+Emang paling cantik ya
+Memang kamu certified
+
+Cuma satu ya one of one
+I swear you hard to find
+Putih kayak susu
+Aku jadi espressonya
+
+Ketemu di IG
+Tapi bisa kah kalo kita
+Ketemuan nanti?
+Bebas pilih mana mau ke
+Gancy or Sency?
+Jadi janganlah sensi
+Kan kita mau happy
+Nanti ku izin mami
+
+You might also like
+MALU MALU
+dia (IDN) & Indahkus
+YANK PERTAMA
+dia (IDN) & Yung Caters
+cuma satu
+Suisei
+He hmm
+He hm, He hm, He hm
+He hm, He hm, He hm
+He hm, He hm, He hm
+He hm, He hm, He hm
+
+Tingkah lucu cek
+Kutu buku cek
+Sayang ortu cek
+Kamu 100% (MY TYPE)
+Baby you look SO FINE
+Kita makan MALAM
+Dinner rooftop YANG HIGH
+
+What's the dresscode, baby?
+Black and yellow, maybe?
+Kalo udah ready
+I'll be there for my lady
+
+No make up tetep cantik
+Paling asik (ASIK)
+Paling classy
+Paling-
+
+Sama-sama suka
+Tapi nunggu apa?
+Memang kita berbeda tapi
+Tetap sama
+Sama-sama suka
+Jadi nunggu apa?
+Tak perlu kata sumpah
+Berdua sampai tua
+
+
+He hmm
+He hm, He hm, He hm
+He hm, He hm, He hm
+He hm, He hm, He hm
+He hm, He hm, He hm"
+  }
 ];
 
 let index = 0;
 let player = document.getElementById("music");
+let songName = document.getElementById("songName");
+let lyrics = document.getElementById("lyrics");
 
-player.src = songs[index];
-player.play();
+function loadSong(){
+  player.src = songs[index].src;
+  songName.innerText = songs[index].name;
+  lyrics.innerText = songs[index].lyrics;
+  player.play();
+}
+
+loadSong();
+
+function togglePlay(){
+  if(player.paused){
+    player.play();
+  }else{
+    player.pause();
+  }
+}
 
 function nextSong(){
   index++;
   if(index >= songs.length){
     index = 0;
   }
-  player.src = songs[index];
-  player.play();
+  loadSong();
 }
 
 function prevSong(){
@@ -78,8 +424,7 @@ function prevSong(){
   if(index < 0){
     index = songs.length - 1;
   }
-  player.src = songs[index];
-  player.play();
+  loadSong();
 }
 
 player.addEventListener("ended", function(){
@@ -88,19 +433,37 @@ player.addEventListener("ended", function(){
 </script>
 
 <style>
-.music-control{
+.music-box{
   position: fixed;
   top: 10px;
   right: 10px;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+  width: 180px;
 }
 
-.music-control button{
-  padding: 6px 10px;
+.music-box button{
   margin: 2px;
-  background: white;
-  border: none;
+  padding: 4px 6px;
+  background: black;
+  color: white;
+  border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#songName{
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+#lyrics{
+  font-size: 11px;
+  margin-bottom: 6px;
 }
 </style>
 
