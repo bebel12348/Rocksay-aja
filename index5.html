@@ -47,34 +47,35 @@ video {
 
 <audio id="music" autoplay></audio>
 
-<div class="music-box">  
-<div id="songName">Lagu 1</div>    
+<div class="music-box">
+  <div id="songName">Lagu 1</div>
 
-  <button onclick="prevSong()">⏮ Prev</button> 
+  <button onclick="prevSong()">⏮ Prev</button>
+  <button onclick="togglePlay()">▶ / ⏸</button>
   <button onclick="nextSong()">⏭ Next</button>
 </div>
 
 <script>
 let songs = [
   {
-    name:"wind by akeboshi",
+    name:"wind",
     src:"Akeboshi - Wind (Lyrics).mp3",
   },
   {
-    name:"so asu by naykilla",
-    src:"So Asu - NAYKILLA ( LIRIK ).mp3",
-  },
-  {
-    name:"malu malu by dia & indahkus",
+    name:"malu malu",
     src:"dia & INDAHKUS - MALU MALU (Official Music Video Lyric).mp3",
+  }
+  {
+    name:"sency",
+    src:"Sency - Dia, Tenxi (Lyrics).mp3",
   },
   {
     name:"公式槇原敬之もう恋なんてしない",
     src:"公式槇原敬之もう恋なんてしない(MV)5thシングル (1992年) Noriyuki MakiharaMo Koinante Shinai.mp3",
   },
   {
-    name:"sency by dia & tenxi",
-    src:"Sency - Dia, Tenxi (Lyrics).mp3",
+    name:"so asu",
+    src:"So Asu - NAYKILLA ( LIRIK ).mp3",
   }
 ];
 
@@ -90,13 +91,22 @@ function loadSong(){
 
 loadSong();
 
+function togglePlay(){
+  if(player.paused){
+    player.play();
+  }else{
+    player.pause();
+  }
+}
+
 function nextSong(){
   index++;
   if(index >= songs.length){
     index = 0;
   }
   loadSong();
-    
+}
+
 function prevSong(){
   index--;
   if(index < 0){
