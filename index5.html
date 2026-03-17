@@ -50,8 +50,7 @@ video {
 <div class="music-box">  
 <div id="songName">Lagu 1</div>    
 
-  <button onclick="prevSong()">⏮ Prev</button>
-  <button onclick="togglePlay()">▶ / ⏸</button>  
+  <button onclick="prevSong()">⏮ Prev</button> 
   <button onclick="nextSong()">⏭ Next</button>
 </div>
 
@@ -97,14 +96,6 @@ function nextSong(){
     index = 0;
   }
   loadSong();
-
-function togglePlay(){
-  if(player.paused){
-    player.play();
-  }else{
-    player.pause();
-  }
-}    
     
 function prevSong(){
   index--;
