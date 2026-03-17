@@ -45,10 +45,64 @@ video {
     Browser kamu tidak mendukung video.
 </video>
 
-<!-- Musik autoplay, tak terlihat -->
-<audio autoplay loop>
-    <source src="Akeboshi - Wind (Lyrics).mp3" type="audio/mpeg">
-</audio>
+<audio id="music" autoplay></audio>
+
+<div class="music-control">
+  <button onclick="prevSong()">⏮previous music</button>
+  <button onclick="nextSong()">⏭next music</button>
+</div>
+
+<script>
+let songs = [
+  "Akeboshi - Wind (Lyrics).mp3",
+  "公式槇原敬之もう恋なんてしない(MV)5thシングル (1992年) Noriyuki MakiharaMo Koinante Shinai.mp3"
+];
+
+let index = 0;
+let player = document.getElementById("music");
+
+player.src = songs[index];
+player.play();
+
+function nextSong(){
+  index++;
+  if(index >= songs.length){
+    index = 0;
+  }
+  player.src = songs[index];
+  player.play();
+}
+
+function prevSong(){
+  index--;
+  if(index < 0){
+    index = songs.length - 1;
+  }
+  player.src = songs[index];
+  player.play();
+}
+
+player.addEventListener("ended", function(){
+  nextSong();
+});
+</script>
+
+<style>
+.music-control{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.music-control button{
+  padding: 6px 10px;
+  margin: 2px;
+  background: pink;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
 
 <footer class="footer">
   Copyright © 2026 Pristin Domain
