@@ -52,7 +52,6 @@ video {
   <div id="lyrics">Ini lirik lagu pertama</div>
 
   <button onclick="prevSong()">⏮ Prev</button>
-  <button onclick="togglePlay()">▶ / ⏸</button>
   <button onclick="nextSong()">⏭ Next</button>
 </div>
 
@@ -402,14 +401,6 @@ function loadSong(){
 }
 
 loadSong();
-
-function togglePlay(){
-  if(player.paused){
-    player.play();
-  }else{
-    player.pause();
-  }
-}
 
 function nextSong(){
   index++;
