@@ -51,7 +51,6 @@ video {
   <div id="songName">Lagu 1</div>
 
   <button onclick="prevSong()">⏮ Prev</button>
-  <button onclick="togglePlay()">▶ / ⏸</button>
   <button onclick="nextSong()">⏭ Next</button>
 </div>
 
@@ -64,7 +63,7 @@ let songs = [
   {
     name:"malu malu",
     src:"dia & INDAHKUS - MALU MALU (Official Music Video Lyric).mp3",
-  }
+  },
   {
     name:"sency",
     src:"Sency - Dia, Tenxi (Lyrics).mp3",
@@ -90,14 +89,6 @@ function loadSong(){
 }
 
 loadSong();
-
-function togglePlay(){
-  if(player.paused){
-    player.play();
-  }else{
-    player.pause();
-  }
-}
 
 function nextSong(){
   index++;
