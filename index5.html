@@ -48,10 +48,9 @@ video {
 <audio id="music" autoplay></audio>
 
 <div class="music-box">
-  <div id="songName">Lagu 1</div>
-  <div id="lyrics">Ini lirik lagu pertama</div>
 
   <button onclick="prevSong()">⏮ Prev</button>
+  <button onclick="togglePlay()">▶ / ⏸</button>  
   <button onclick="nextSong()">⏭ Next</button>
 </div>
 
@@ -97,8 +96,15 @@ function nextSong(){
     index = 0;
   }
   loadSong();
-}
 
+function togglePlay(){
+  if(player.paused){
+    player.play();
+  }else{
+    player.pause();
+  }
+}    
+    
 function prevSong(){
   index--;
   if(index < 0){
