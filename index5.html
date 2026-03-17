@@ -50,7 +50,6 @@ video {
 <div class="music-control">
   <button onclick="prevSong()">⏮previous music</button>
   <button onclick="nextSong()">⏭next music</button>
-  <button onclick="pausesong()">play/pause</button>  
 </div>
 
 <script>
@@ -65,10 +64,6 @@ let player = document.getElementById("music");
 player.src = songs[index];
 player.play();
 
-function pauseSong(){
-  if(!player.paused){
-    player.pause();
-  }
 function nextSong(){
   index++;
   if(index >= songs.length){
@@ -102,7 +97,7 @@ player.addEventListener("ended", function(){
 .music-control button{
   padding: 6px 10px;
   margin: 2px;
-  background: black;
+  background: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
